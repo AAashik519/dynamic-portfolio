@@ -6,6 +6,7 @@ import HeroSection from "./components/HeroSection/HeroSection";
 import Skills from "./components/Skills/Skills";
 import { useEffect, useState } from "react";
 import Expericence from "./components/Experience/Expericence";
+import Project from "./components/Project/Project";
  
 
 const Body = styled.div`
@@ -65,6 +66,8 @@ function App() {
             <Skills data={data} />
             <Expericence data={data} />
           </Wrapper>
+            <Project data={data} />
+          
         </Body>
       </ThemeProvider>
     </>

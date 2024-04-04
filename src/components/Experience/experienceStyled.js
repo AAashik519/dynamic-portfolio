@@ -1,14 +1,27 @@
 import styled from 'styled-components'
 
+
+export const TimeLineSection= styled.div`
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+`
+
 export const Container=styled.div`
-    margin: 30px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 10;
     position: relative;
-    padding: 30px 0;
-`
+    padding-top: 30px;
+    padding-bottom:100px;
+ 
+ `
 
 export const Wrapper = styled.div`
 display: flex;
@@ -43,17 +56,3 @@ margin-top: 15px;
 }
 `
 
-export const TimeLineSection= styled.div`
- 
-`
-
-export const TimeLine= styled.div`
- 
-`
-
-
-export const TimeLineItem= styled.div`
-
-`
-
-export const TimeLineSperator= styled.div``

@@ -10,6 +10,7 @@ export const Nav =styled.div`
     height: 70px;
     top: 0;
     font-size: 1rem;
+    z-index: 100;
     
     @media (max-width: 960px) {
         trastion: 0.8s all ease;
