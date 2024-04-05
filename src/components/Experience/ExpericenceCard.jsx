@@ -5,7 +5,7 @@ import { Body, Card, Company, Description, Duration, Image, List, Location, Role
 const ExpericenceCard = ({experience}) => {
     console.log(experience.bulletPoints);
   return (
-  <Card>
+  <Card >
     <Top>
     <Image src={experience?.icon?.url} />
         <Body>

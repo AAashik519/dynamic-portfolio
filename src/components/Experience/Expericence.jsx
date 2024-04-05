@@ -13,9 +13,9 @@ const Expericence = ({ data }) => {
   const { timeline } = data.user;
   console.log(timeline);
   return (
-    <Container>
+    <Container id="experience">
       <Wrapper>
-        <Title>Expericence</Title>
+        <Title>Experience</Title>
         <Desc>
           My work experience as a software engineer and working on different
           companies and projects.{" "}

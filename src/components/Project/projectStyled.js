@@ -98,13 +98,6 @@ export const Heading = styled.div`
     font-size: 20px;
     font-weight: 600;
     color: ${({ theme }) => theme.text_secondary};
-    overflow: hidden;
-    display: -webkit-box;
-    max-width: 100%;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
 `
 export const Description=styled.p`
 font-weight: 400;

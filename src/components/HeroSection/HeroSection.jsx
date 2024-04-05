@@ -11,7 +11,7 @@ import HeroBgAnnimation from './HeroBgAnnimation'
   console.log(name ,title);
   
    return (
-     <div id='#about'>
+     <div id='about'>
         <HeroContainer>
             <HeroBg>
               <HeroBgAnnimation />

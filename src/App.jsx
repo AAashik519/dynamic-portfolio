@@ -7,6 +7,8 @@ import Skills from "./components/Skills/Skills";
 import { useEffect, useState } from "react";
 import Expericence from "./components/Experience/Expericence";
 import Project from "./components/Project/Project";
+import Service from "./components/Service/Service";
+import Testimonials from "./components/Testimonials/Testimonials";
  
 
 const Body = styled.div`
@@ -67,9 +69,11 @@ function App() {
             <Expericence data={data} />
           </Wrapper>
             <Project data={data} />
+            <Service data={data}   />
+            <Testimonials data={data}  />
           
         </Body>
-      </ThemeProvider>
+      </ThemeProvider >
     </>
   );
 }

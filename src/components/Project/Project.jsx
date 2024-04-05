@@ -19,7 +19,7 @@ const Project = ({ data }) => {
   console.log(projects);
 
   return (
-    <Container>
+    <Container id='project'>
       <Wrapper>
         <Title>Projects</Title>
         <Desc>
