@@ -2,11 +2,13 @@
  import Typewritter from 'typewriter-effect'
 import {HeroContainer,HeroBg,HeroInnerContainer,HeroLeftContainer,HeroRightContainer,Img,Span,TextLoop,Title, Description} from './heroContainerStyled'
 import HeroBgAnnimation from './HeroBgAnnimation'
+import useUser from '../../hooks/useUser'
  
- const HeroSection = ({data}) => {
+ const HeroSection = () => {
    
+  const [fetchdata,isPending ,error] = useUser();
   
-  const {name, title,description ,avatar}= data.user.about
+  const {name, title,description ,avatar }= fetchdata.user.about
 
   console.log(name ,title);
   

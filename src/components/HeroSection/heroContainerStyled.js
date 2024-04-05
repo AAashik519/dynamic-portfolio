@@ -158,7 +158,8 @@ export const Description = styled.div`
   color: ${({ theme }) => theme.text_primary + 95};
 
   @media (max-width: 960px) {
-    text-align: center;
+    text-align: justify;
+    padding: 0 10px;
   }
 
   @media (max-width: 640px) {

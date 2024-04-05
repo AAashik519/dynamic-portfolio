@@ -38,10 +38,13 @@ margin-top: 15px;
 
 @media (max-width: 768px) {
     font-size: 16px;
+    padding: 0 20px;
+    text-align: center;
 }
 `
 export const ToggleButtonGroup = styled.div`
     display: flex;
+   
     justify-content: center;
     align-items: center;
     width: 900px;
@@ -50,6 +53,12 @@ export const ToggleButtonGroup = styled.div`
     
     color: ${({theme})=> theme.primary};
     border: 1.5px solid ${({theme})=> theme.primary}; 
+
+    @media (max-width: 768px) {
+        max-width: 100%;
+        flex-wrap: wrap;
+        padding: 0 20px;
+}
    
 `
 export const Divider = styled.div`

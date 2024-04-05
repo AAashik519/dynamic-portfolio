@@ -3,7 +3,7 @@ import { Body, Card, Company, Description, Duration, Image, List, Location, Role
  
 
 const ExpericenceCard = ({experience}) => {
-    console.log(experience.bulletPoints);
+    // console.log(experience.bulletPoints);
   return (
   <Card >
     <Top>
@@ -17,8 +17,8 @@ const ExpericenceCard = ({experience}) => {
     </Top>
         <Description>
             <Summary>{experience.summary}</Summary>
-            {experience?.bulletPoints.map((point)=>(
-                <List> •{point}</List>
+            {experience?.bulletPoints.map((point ,i)=>(
+                <List key={i}> •{point}</List>
             ))}
 
         </Description>

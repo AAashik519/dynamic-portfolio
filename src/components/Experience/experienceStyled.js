@@ -53,6 +53,8 @@ margin-top: 15px;
 
 @media (max-width: 768px) {
     font-size: 16px;
+    padding: 0 14px;
+    text-align:center;
 }
 `
 

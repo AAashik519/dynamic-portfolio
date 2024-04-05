@@ -13,10 +13,13 @@ import {
   Title,
   Wrapper,
 } from "./projectStyled";
+import useUser from "../../hooks/useUser";
 
-const Project = ({ data }) => {
-  const { projects } = data.user;
-  console.log(projects);
+const Project = () => {
+  const [fetchdata ] = useUser();
+
+  const { projects } = fetchdata.user;
+  // console.log(projects);
 
   return (
     <Container id='project'>
@@ -32,7 +35,7 @@ const Project = ({ data }) => {
               <Image src={project.image.url} />
               <Tags>
                 {project.techStack?.map((tag, i) => (
-                  <Tag>{tag}</Tag>
+                  <Tag key={i}>{tag}</Tag>
                 ))}
               </Tags>
               <Details>

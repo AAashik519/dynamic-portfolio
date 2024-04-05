@@ -8,10 +8,13 @@ import {
 } from "./experienceStyled";
 import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineSeparator } from "@mui/lab";
 import ExpericenceCard from "./ExpericenceCard";
+import useUser from "../../hooks/useUser";
 
-const Expericence = ({ data }) => {
-  const { timeline } = data.user;
-  console.log(timeline);
+const Expericence = () => {
+  const [fetchdata] = useUser();
+
+  const { timeline } = fetchdata.user;
+  // console.log(timeline);
   return (
     <Container id="experience">
       <Wrapper>
@@ -23,7 +26,7 @@ const Expericence = ({ data }) => {
         <TimeLineSection>
         <Timeline>
                         {timeline.map((experience,index) => (
-                            <TimelineItem>
+                            <TimelineItem key={index}>
                                 <TimelineSeparator>
                                     <TimelineDot variant="outlined" color="secondary" />
                                     {index !== experience.length - 1 && <TimelineConnector style={{ background: '#854CE6' }} />}

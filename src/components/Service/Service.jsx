@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { Card, CardContainer, Charge, Container, Desc, Description, Details, Divider, Heading, Image, Title, ToggleButton, ToggleButtonGroup, Wrapper } from "./serviceStyled";
 import ServiceCard from "./ServiceCard";
+import useUser from "../../hooks/useUser";
 
 const Service = ({data}) => {
-    const { services } = data.user;
-    console.log(services);
+  const [fetchdata ] = useUser();
+
+    const { services } = fetchdata.user;
+  //  console.log(services); 
     const [toggle, setToggle]= useState('all')
   return (
     <Container id="service">

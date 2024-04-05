@@ -9,6 +9,8 @@ import Expericence from "./components/Experience/Expericence";
 import Project from "./components/Project/Project";
 import Service from "./components/Service/Service";
 import Testimonials from "./components/Testimonials/Testimonials";
+import useUser from "./hooks/useUser";
+import Contact from "./components/Contact/Contact";
  
 
 const Body = styled.div`
@@ -34,43 +36,32 @@ const Wrapper = styled.div`
 `;
 
 function App() {
- 
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
   
-  // console.log(skills);
+  const [fetchdata,isPending ,error] = useUser();
 
-  useEffect(() => {
-    fetch('https://portfolio-backend-30mp.onrender.com/api/v1/get/user/65b3a22c01d900e96c4219ae')
-      .then(res => res.json())
-      .then(data => {
-        setData(data);
-        setLoading(false);
-      })
-      .catch(error => {
-        setError(error);
-        setLoading(false);
-      });
-  }, []);
+  console.log('fetcxh',fetchdata);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+   
+
+  if (isPending) return <p>Loading...</p>;
+  if (error) return <p>{error.message}</p>;
 
   return (
     <>
       <ThemeProvider theme={darkTheme}>
         <Navbar />
         <Body>
-          <HeroSection  data={data} />
+          <HeroSection />
           <Wrapper>
-            <Skills data={data} />
-            <Expericence data={data} />
+            <Skills   />
+            <Expericence   />
           </Wrapper>
-            <Project data={data} />
-            <Service data={data}   />
-            <Testimonials data={data}  />
+            <Project  />
+            <Service    />
+            <Testimonials    />
+            <Contact />
+
+            <Wrapper></Wrapper>
           
         </Body>
       </ThemeProvider >

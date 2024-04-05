@@ -10,10 +10,13 @@ import {
   Title,
   Wrapper,
 } from "./skillsStyled";
+import useUser from "../../hooks/useUser";
 
-const Skills = ({ data }) => {
-  const {skills} = data.user
-  console.log(skills[0].image.url);
+const Skills = () => {
+
+  const [fetchdata] = useUser();
+  const {skills} = fetchdata.user
+  // console.log(skills[0].image.url);
   return (
     <Container id="skills">
       <Wrapper>
@@ -24,8 +27,8 @@ const Skills = ({ data }) => {
         </Desc>
         <SkillsContainer>
           <SkillList>
-          {skills.map((skill) => (
-            <SkillItem>
+          {skills.map((skill ,i) => (
+            <SkillItem key={i}>
               <SkillImage src={skill.image.url} />
                <SkillName>{skill.name}</SkillName>
             </SkillItem>

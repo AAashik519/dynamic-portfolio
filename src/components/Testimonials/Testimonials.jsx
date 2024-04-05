@@ -1,19 +1,46 @@
-import React from 'react'
-import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineSeparator } from "@mui/lab";
-import { Container, Desc, TimeLineSection, Title, Wrapper } from './TestimonialStyled';
-import ExpericenceCard from '../Experience/ExpericenceCard';
-import TestimonialCard from './TestimonialCard';
-const Testimonials = ({data}) => {
-    const {testimonials}= data.user
+import React from "react";
+import {
+  Timeline,
+  TimelineConnector,
+  TimelineContent,
+  TimelineDot,
+  TimelineItem,
+  TimelineSeparator,
+} from "@mui/lab";
+import {
+  Container,
+  Desc,
+  SliderCard,
+  TimeLineSection,
+  Title,
+  Wrapper,
+} from "./TestimonialStyled";
+import ExpericenceCard from "../Experience/ExpericenceCard";
+import TestimonialCard from "./TestimonialCard";
+import useUser from "../../hooks/useUser";
+import { Swiper, SwiperSlide } from "swiper/react";
+// import "swiper/css/pagination";
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { Navigation } from 'swiper/modules';
+// import { Pagination } from "swiper/modules";
+
+const Testimonials = () => {
+  const [fetchdata] = useUser();
+
+  const { testimonials } = fetchdata.user;
+  console.log(testimonials);
+
   return (
-    <Container id='testimonials'>
-    <Wrapper>
-      <Title>Expericence</Title>
-      <Desc>
-        My work experience as a software engineer and working on different
-        companies and projects.{" "}
-      </Desc>
-      <TimeLineSection>
+    <Container id="testimonials">
+      <Wrapper>
+        <Title>Testimonials</Title>
+        <Desc>
+          My work experience as a software engineer and working on different
+          companies and projects.{" "}
+        </Desc>
+        {/* <TimeLineSection>
       <Timeline>
                       {testimonials.map((experience,index) => (
                           <TimelineItem>
@@ -27,10 +54,21 @@ const Testimonials = ({data}) => {
                           </TimelineItem>
                       ))}
                   </Timeline>
-      </TimeLineSection>
-    </Wrapper>
-  </Container>
-  )
-}
+      </TimeLineSection> */}
+      <SliderCard >
+      <Swiper navigation={true} modules={[Navigation]}  className="mySwiper">
+          {testimonials.map((experience, index) => (
+            <SwiperSlide key={index}><TestimonialCard experience={experience} />  </SwiperSlide>
+          ))}
 
-export default Testimonials
+       
+        </Swiper>
+      </SliderCard>
+
+      
+      </Wrapper>
+    </Container>
+  );
+};
+
+export default Testimonials;
