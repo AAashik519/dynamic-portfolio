@@ -22,7 +22,7 @@ export const NavContainer =styled.div`
   justify-content: space-between;
   align-items: center;
   height: 70px;
-  padding: 0 24px;
+  padding: 0 15px;
   max-width: 1200px;
   margin: 0 auto;
   @media (max-width: 640px) {
@@ -38,6 +38,7 @@ export const Span = styled.div`
 export const NavLogo =styled(LinkR)`
    max-width: 80%;    
     padding: 0 6px;
+    flex: 1;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -45,13 +46,14 @@ export const NavLogo =styled(LinkR)`
 `
 export const NavItems =styled.ul`
  display: flex;
+ flex:auto;
  gap:35px;
  justify-content: center;
  align-items: center;
  max-width: 100%;
  list-style: none;
 
- @media screen and (max-width: 768px) {
+ @media screen and (max-width: 1000px) {
       display: none;
     }
   
@@ -69,11 +71,12 @@ export const NavLink =styled.a`
 export const ButtonContainer = styled.div`
   width: 80%;  
   height: 100%;
+  flex: 1;
   display: flex;
   justify-content: end;
   align-items: center;
   padding: 0 6px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1000px) {
     display: none;
   }
   `
@@ -102,11 +105,12 @@ background-color: transparent;
 
 export const MobileIcon = styled.div`
   display: none;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1000px) {
     display: block;
     position: absolute;
     top: 0;
     right: 0;
+    
     transform: translate(-100%, 60%);
     font-size: 1.5rem;
     cursor: pointer;
